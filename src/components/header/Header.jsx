@@ -1,12 +1,15 @@
 import React from "react";
 import "./header.css";
 import { Link } from "react-router-dom";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import {
   fetchAsyncMovies,
   fetchAsyncShows,
 } from "../../features/movies/movieSlice";
+
+// testing for user auth
+import { userAuth } from "../../features/authSlice";
 
 export default function Header() {
   const [searchText, setsearchText] = useState("");
@@ -23,6 +26,27 @@ export default function Header() {
     setsearchText("");
   };
 
+  // tesing
+  const [testData, setTestData] = useState("");
+  const { isAuth } = useSelector((state) => state.auth);
+
+  const saveData = () => {
+    if (testData === "") {
+      alert("Please insert some text");
+      return;
+    }
+
+    const myObj = {
+      token: testData,
+    };
+    localStorage.setItem("access", JSON.stringify(myObj));
+    dispatch(userAuth(true));
+  };
+
+  useEffect(() => {
+    console.log("It's call again!");
+  }, [saveData]);
+
   return (
     <div>
       <div className="header">
@@ -31,6 +55,19 @@ export default function Header() {
             <div className="col-4">
               <Link to="/">
                 <div className="logo">MovieA</div>
+                {!isAuth ? (
+                  <div>
+                    <input
+                      type="text"
+                      onChange={(e) => {
+                        setTestData(e.target.value);
+                      }}
+                    />
+                    <button onClick={saveData}>Save</button>
+                  </div>
+                ) : (
+                  ""
+                )}
               </Link>
             </div>
             <div className="col-8">
