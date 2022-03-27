@@ -1,0 +1,10 @@
+.details {
+  color: var(--font-primary);
+}
+.details h2 {
+  color: var(--font-secondary);
+}
+.loading p {
+  margin-top: 20px;
+  color: var(--font-primary);
+}

@@ -1,5 +1,9 @@
+.card-container {
+  width: 400px;
+  background: red;
+}
 .custom-design {
-  width: 250px !important;
+  margin: 30px 10px;
   background: var(--secondary-color);
   color: var(--font-primary);
   transition: 0.3s;
