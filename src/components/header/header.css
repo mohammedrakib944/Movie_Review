@@ -14,8 +14,11 @@
 }
 .searchStyle > input {
   width: 80%;
-  padding: 2px 10px;
-  border: none;
+  padding: 5px 10px;
+  border: 1px solid #513636;
+  background: #1b0a0a;
+  border-radius: 10px 0 0 10px;
+  color: aliceblue;
 }
 .searchStyle > input:focus {
   outline: none;
@@ -23,4 +26,6 @@
 .searchStyle > button {
   border: none;
   padding: 2px 10px;
+  background: #584c4c;
+  border-radius: 0 10px 10px 0;
 }

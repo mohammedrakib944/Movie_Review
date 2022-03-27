@@ -8,3 +8,10 @@
   margin-top: 20px;
   color: var(--font-primary);
 }
+.TableBody tr {
+  border-bottom: 1px solid rgba(179, 179, 179, 0.377);
+}
+.TableBody tr th {
+  width: 140px;
+  padding: 10px;
+}

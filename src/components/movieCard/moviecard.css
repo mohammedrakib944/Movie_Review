@@ -4,15 +4,18 @@
 }
 .custom-design {
   margin: 30px 10px;
-  background: var(--secondary-color);
+  background: #1e0f0f;
   color: var(--font-primary);
   transition: 0.3s;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #4a3333;
 }
 .custom-design:hover {
   transform: scale(1.1);
   z-index: 10;
-
-  box-shadow: 0px 10px 76px black;
+  box-shadow: 0px 3px 10px #71222a;
+  border: 1px solid #d53544;
 }
 .custom-card-header {
   font-weight: 600;
